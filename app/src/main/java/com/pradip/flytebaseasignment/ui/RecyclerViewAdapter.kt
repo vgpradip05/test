@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.pradip.flytebaseasignment.R
 
-class RecyclerViewAdapter(private val items: ArrayList<Pair<String, String>>) :
+class RecyclerViewAdapter(private val items: ArrayList<String>) :
     RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>() {
     inner class RecyclerViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val item = view.findViewById<AppCompatTextView>(R.id.tv_item)
@@ -24,6 +24,6 @@ class RecyclerViewAdapter(private val items: ArrayList<Pair<String, String>>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
-        holder.item.text = "${items[position].first} = ${items[position].second}"
+        holder.item.text = items[position]
     }
 }

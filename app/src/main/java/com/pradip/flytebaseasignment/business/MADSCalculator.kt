@@ -1,12 +1,13 @@
 package com.pradip.flytebaseasignment.business
 
 import java.util.*
+
 /*
 * Separate Business logic class
 *
 * */
 object MADSCalculator {
-     fun evaluate(expression: String): Int {
+    fun evaluate(expression: String): Int {
         val tokens = expression.toCharArray()
 
         // Stack for numbers: 'values'
@@ -97,6 +98,15 @@ object MADSCalculator {
             }
         }
         return 0
+    }
+
+
+    fun encryptForFirebase(key: String): String {
+        return key.replace("+", "A").replace("*", "M").replace("/", "D").replace("-", "S")
+    }
+
+    fun decryptFromFirebase(result: String): String {
+        return result.replace("A", "+").replace("M", "*").replace("D", "/").replace("S", "-")
     }
 }
 

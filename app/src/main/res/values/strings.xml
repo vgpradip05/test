@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">FlyteBaseAsignment</string>
-    <string name="valid_ip">Enter valid input !</string>
-    <string name="error">Error while calculation</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">MADS Calculator</string>
+    <string name="please_enter_spaces_between_letters_and_operators">Please enter spaces between letters and operators</string>
+    <string name="calculate">Calculate</string>
+    <string name="last_ans">Last ans</string>
 </resources>

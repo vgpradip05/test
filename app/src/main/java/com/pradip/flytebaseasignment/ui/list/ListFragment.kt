@@ -1,4 +1,4 @@
-package com.pradip.flytebaseasignment.ui
+package com.pradip.flytebaseasignment.ui.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,20 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pradip.flytebaseasignment.MainViewModel
+import com.pradip.flytebaseasignment.viewmodel.ListViewModel
 import com.pradip.flytebaseasignment.R
 import com.pradip.flytebaseasignment.databinding.FragmentListBinding
 import kotlinx.android.synthetic.main.fragment_list.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ListFragment : Fragment() {
-    val viewModel: MainViewModel by sharedViewModel()
+    private val viewModel: ListViewModel by sharedViewModel()
     private lateinit var binding: FragmentListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +38,8 @@ class ListFragment : Fragment() {
         val list: ArrayList<String> = ArrayList()
         viewModel.getDataFromFirebase()
 
-        viewModel._list.observe(this, Observer {
+        viewModel.list.observe(this, Observer {
+            list.clear()
             list.addAll(it)
             rv_list.adapter?.notifyDataSetChanged()
         })
@@ -52,6 +47,7 @@ class ListFragment : Fragment() {
         rv_list.layoutManager = LinearLayoutManager(context)
         rv_list.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         list.reverse()
-        rv_list.adapter = RecyclerViewAdapter(list)
+        rv_list.adapter =
+            RecyclerViewAdapter(list)
     }
 }

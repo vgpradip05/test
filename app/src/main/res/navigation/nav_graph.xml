@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.pradip.flytebaseasignment.ui.LoginFragment"
+        android:name="com.pradip.flytebaseasignment.ui.login.LoginFragment"
         android:label="Splash"
         tools:layout="@layout/fragment_login">
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainfragment"
-        android:name="com.pradip.flytebaseasignment.ui.MainFragment"
+        android:name="com.pradip.flytebaseasignment.ui.home.MainFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list">
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.pradip.flytebaseasignment.ui.ListFragment"
+        android:name="com.pradip.flytebaseasignment.ui.list.ListFragment"
         android:label="ListFragment"
         tools:layout="@layout/fragment_list" />
 </navigation>

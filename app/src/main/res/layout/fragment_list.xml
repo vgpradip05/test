@@ -4,11 +4,11 @@
 
     <data>
 
-        <import type="com.pradip.flytebaseasignment.MainViewModel" />
+        <import type="com.pradip.flytebaseasignment.viewmodel.ListViewModel" />
 
         <variable
             name="viewModel"
-            type="MainViewModel" />
+            type="com.pradip.flytebaseasignment.viewmodel.ListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.pradip.flytebaseasignment.ui
+package com.pradip.flytebaseasignment.ui.login
 
 import android.os.Bundle
 import android.util.Log
